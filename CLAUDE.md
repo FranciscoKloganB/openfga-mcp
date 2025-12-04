@@ -50,7 +50,7 @@ The project has a minimal structure focused on implementing an MCP server:
 - **src/Prompts/**: Directory containing classes that expose prompts for MCP client to generate structured prompts from
 - **src/Documentation/**: Directory containing documentation indexing and chunking system for SDK knowledge base
 - Built on top of `php-mcp/server` framework
-- Uses `evansims/openfga-php` for OpenFGA client functionality
+- Uses `franciscoklogan/openfga-php` for OpenFGA client functionality
 
 ## Operating Modes
 
@@ -171,7 +171,7 @@ All MCP requests and responses are logged to `logs/mcp-debug.log` in the project
 **Comprehensive Coverage:** The `LoggingStdioTransport` logs ALL MCP protocol interactions at the JSON-RPC transport level, including:
 
 - **Tools** - All tool invocations (`tools/call`) with parameters and results
-- **Resources** - All resource access (`resources/read`) including URIs and content  
+- **Resources** - All resource access (`resources/read`) including URIs and content
 - **Resource Templates** - All template-based resource generation
 - **Prompts** - All prompt retrievals (`prompts/get`) with arguments and responses
 - **Completions** - All completion requests (`completion/complete`) with context

@@ -11,7 +11,7 @@ The OpenFGA Laravel team takes security issues seriously. We appreciate your eff
 If you believe you've found a security vulnerability in the OpenFGA Laravel SDK, please follow these steps:
 
 1. **Do not disclose the vulnerability publicly**
-2. **Use GitHub's private vulnerability reporting feature** at [https://github.com/evansims/openfga-laravel/security/advisories/new](https://github.com/evansims/openfga-laravel/security/advisories/new)
+2. **Use GitHub's private vulnerability reporting feature** at [https://github.com/franciscoklogan/openfga-laravel/security/advisories/new](https://github.com/franciscoklogan/openfga-laravel/security/advisories/new)
 3. **Include details** such as:
    - A description of the vulnerability
    - Steps to reproduce with minimal code examples

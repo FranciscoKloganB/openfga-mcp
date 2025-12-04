@@ -35,10 +35,10 @@ curl -sSLO https://github.com/slsa-framework/slsa-verifier/releases/latest/downl
 
 ```bash
 # Download the release artifact
-curl -LO https://github.com/evansims/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz
+curl -LO https://github.com/franciscoklogan/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz
 
 # Download the provenance
-curl -LO https://github.com/evansims/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz.intoto.jsonl
+curl -LO https://github.com/franciscoklogan/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz.intoto.jsonl
 ```
 
 2. Verify the provenance:
@@ -47,7 +47,7 @@ curl -LO https://github.com/evansims/openfga-mcp/releases/download/v1.0.0/openfg
 slsa-verifier verify-artifact \
   openfga-mcp-v1.0.0.tar.gz \
   --provenance-path openfga-mcp-v1.0.0.tar.gz.intoto.jsonl \
-  --source-uri github.com/evansims/openfga-mcp \
+  --source-uri github.com/franciscoklogan/openfga-mcp \
   --source-tag v1.0.0
 ```
 
@@ -65,7 +65,7 @@ docker buildx imagetools inspect <dockerhub-username>/openfga-mcp:1.0.0 --format
 # Using cosign (alternative method)
 cosign verify-attestation <dockerhub-username>/openfga-mcp:1.0.0 \
   --type slsaprovenance \
-  --certificate-identity-regexp "^https://github.com/evansims/openfga-mcp/.github/workflows/" \
+  --certificate-identity-regexp "^https://github.com/franciscoklogan/openfga-mcp/.github/workflows/" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
 
@@ -75,11 +75,11 @@ If using GitHub's native attestation workflow instead of SLSA files:
 
 ```bash
 # Download the artifact
-curl -LO https://github.com/evansims/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz
+curl -LO https://github.com/franciscoklogan/openfga-mcp/releases/download/v1.0.0/openfga-mcp-v1.0.0.tar.gz
 
 # Verify using GitHub CLI
 gh attestation verify openfga-mcp-v1.0.0.tar.gz \
-  --owner evansims \
+  --owner franciscoklogan \
   --repo openfga-mcp
 ```
 
@@ -94,4 +94,4 @@ Our build process aims for reproducibility by:
 
 ## Reporting Security Vulnerabilities
 
-Please report security vulnerabilities via [GitHub Security Advisories](https://github.com/evansims/openfga-mcp/security/advisories/new).
+Please report security vulnerabilities via [GitHub Security Advisories](https://github.com/franciscoklogan/openfga-mcp/security/advisories/new).

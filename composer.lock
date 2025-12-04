@@ -132,16 +132,16 @@
             "time": "2025-04-07T20:06:18+00:00"
         },
         {
-            "name": "evansims/openfga-php",
+            "name": "franciscoklogan/openfga-php",
             "version": "v1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/evansims/openfga-php.git",
+                "url": "https://github.com/franciscoklogan/openfga-php.git",
                 "reference": "434a33d9bad39d364ce6e0ae57a1d711b65d58af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/evansims/openfga-php/zipball/434a33d9bad39d364ce6e0ae57a1d711b65d58af",
+                "url": "https://api.github.com/repos/franciscoklogan/openfga-php/zipball/434a33d9bad39d364ce6e0ae57a1d711b65d58af",
                 "reference": "434a33d9bad39d364ce6e0ae57a1d711b65d58af",
                 "shasum": ""
             },
@@ -216,12 +216,12 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Stop writing authorization logic. Start asking questions. OpenFGA high performance relationship-based access control for PHP.",
-            "homepage": "https://github.com/evansims/openfga-php",
+            "homepage": "https://github.com/franciscoklogan/openfga-php",
             "keywords": [
                 "Authentication",
                 "abac",
@@ -240,9 +240,9 @@
                 "zanzibar"
             ],
             "support": {
-                "docs": "https://github.com/evansims/openfga-php#readme",
-                "issues": "https://github.com/evansims/openfga-php/issues",
-                "source": "https://github.com/evansims/openfga-php"
+                "docs": "https://github.com/franciscoklogan/openfga-php#readme",
+                "issues": "https://github.com/franciscoklogan/openfga-php/issues",
+                "source": "https://github.com/franciscoklogan/openfga-php"
             },
             "time": "2025-07-07T04:15:17+00:00"
         },
@@ -1252,8 +1252,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1329,8 +1329,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-6 Cache implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1404,8 +1404,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-11 Container implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1476,8 +1476,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR implementations by searching for a list of well-known classes that implement the relevant interfaces, and returning an instance of the first one that is found.",
@@ -1554,8 +1554,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-14 Event Dispatcher implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1627,8 +1627,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-18 HTTP Client implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1700,8 +1700,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-17 HTTP Factory implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",
@@ -1773,8 +1773,8 @@
             "authors": [
                 {
                     "name": "Evan Sims",
-                    "email": "hello@evansims.com",
-                    "homepage": "https://evansims.com/"
+                    "email": "hello@franciscoklogan.com",
+                    "homepage": "https://franciscoklogan.com/"
                 }
             ],
             "description": "Lightweight library that discovers available PSR-3 Log implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.",

@@ -53,12 +53,12 @@ composer docker
 docker build -t openfga-mcp:local .
 
 # Run Docker container (offline mode)
-docker run --rm -i --pull=always evansims/openfga-mcp:latest
+docker run --rm -i --pull=always franciscoklogan/openfga-mcp:latest
 
 # Run with OpenFGA connection
 docker run --rm -i --pull=always \
   -e OPENFGA_MCP_API_URL=http://host.docker.internal:8080 \
-  evansims/openfga-mcp:latest
+  franciscoklogan/openfga-mcp:latest
 ```
 
 ## Documentation Commands

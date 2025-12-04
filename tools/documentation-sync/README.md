@@ -71,8 +71,8 @@ composer sync:all      # Sync all to ../../docs with verbose output
 | JS_SDK | openfga/js-sdk/README.md | docs/JS_SDK.md |
 | DOTNET_SDK | openfga/dotnet-sdk/README.md | docs/DOTNET_SDK.md |
 | GO_SDK | openfga/go-sdk/README.md | docs/GO_SDK.md |
-| PHP_SDK | evansims/openfga-php/docs/** + README.md | docs/PHP_SDK.md |
-| LARAVEL_SDK | evansims/openfga-laravel/docs/** + README.md | docs/LARAVEL_SDK.md |
+| PHP_SDK | franciscoklogan/openfga-php/docs/** + README.md | docs/PHP_SDK.md |
+| LARAVEL_SDK | franciscoklogan/openfga-laravel/docs/** + README.md | docs/LARAVEL_SDK.md |
 
 ## Automation
 
@@ -91,22 +91,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-      
+
       - name: Install dependencies
         working-directory: tools/documentation-sync
         run: composer install
-      
+
       - name: Sync documentation
         working-directory: tools/documentation-sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: php sync.php -v -o ../../docs
-      
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"

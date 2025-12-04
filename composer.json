@@ -1,5 +1,5 @@
 {
-  "name": "evansims/openfga-mcp",
+  "name": "franciscoklogan/openfga-mcp",
   "description": "Query and administer OpenFGA and Auth0 FGA using AI agents.",
   "license": "Apache-2.0",
   "type": "library",
@@ -23,18 +23,18 @@
   "authors": [
     {
       "name": "Evan Sims",
-      "homepage": "https://evansims.com"
+      "homepage": "https://franciscoklogan.com"
     }
   ],
-  "homepage": "https://github.com/evansims/openfga-mcp",
+  "homepage": "https://github.com/franciscoklogan/openfga-mcp",
   "support": {
-    "issues": "https://github.com/evansims/openfga-mcp/issues",
-    "source": "https://github.com/evansims/openfga-mcp",
-    "docs": "https://github.com/evansims/openfga-mcp#readme"
+    "issues": "https://github.com/franciscoklogan/openfga-mcp/issues",
+    "source": "https://github.com/franciscoklogan/openfga-mcp",
+    "docs": "https://github.com/franciscoklogan/openfga-mcp#readme"
   },
   "require": {
     "php": "^8.3",
-    "evansims/openfga-php": "^1.5",
+    "franciscoklogan/openfga-php": "^1.5",
     "guzzlehttp/guzzle": "^7.2",
     "php-mcp/server": "^3.2"
   },

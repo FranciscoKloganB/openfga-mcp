@@ -6,12 +6,12 @@
 
 ## Core Dependencies
 - `php-mcp/server` (^3.2): MCP server framework
-- `evansims/openfga-php` (^1.5): OpenFGA PHP SDK for client functionality
+- `franciscoklogan/openfga-php` (^1.5): OpenFGA PHP SDK for client functionality
 - `guzzlehttp/guzzle` (^7.2): HTTP client for API communication
 
 ## Development Dependencies
 - **Testing**: Pest framework (^3) with Mockery for mocking
-- **Static Analysis**: 
+- **Static Analysis**:
   - PHPStan (level max with strict rules)
   - Psalm (errorLevel 1)
 - **Code Quality**:

@@ -64,14 +64,14 @@ final class DocumentationSync
             'output' => 'GO_SDK.md',
         ],
         'PHP_SDK' => [
-            'repo' => 'evansims/openfga-php',
+            'repo' => 'franciscoklogan/openfga-php',
             'branch' => 'main',
             'paths' => ['README.md', 'docs'],
             'recursive' => true,
             'output' => 'PHP_SDK.md',
         ],
         'LARAVEL_SDK' => [
-            'repo' => 'evansims/openfga-laravel',
+            'repo' => 'franciscoklogan/openfga-laravel',
             'branch' => 'main',
             'paths' => ['README.md', 'docs'],
             'recursive' => true,
@@ -118,7 +118,7 @@ final class DocumentationSync
             }
 
             $this->log("📚 Syncing {$source}...");
-            
+
             try {
                 $this->syncSource($source, $this->sourceMapping[$source]);
                 $this->log("✅ {$source} synced successfully");
@@ -135,7 +135,7 @@ final class DocumentationSync
 
         foreach ($config['paths'] as $path) {
             $this->log("  📁 Fetching {$path}...");
-            
+
             if ($config['recursive'] && !str_ends_with($path, '.md') && !str_ends_with($path, '.mdx')) {
                 $content = $this->fetchDirectoryContent($config['repo'], $config['branch'], $path);
             } else {
@@ -172,7 +172,7 @@ final class DocumentationSync
             $response = $this->httpClient->get($url, [
                 'query' => ['ref' => $branch],
             ]);
-            
+
             $items = json_decode((string) $response->getBody(), true);
             if (!is_array($items)) {
                 return '';
@@ -217,7 +217,7 @@ final class DocumentationSync
     private function processMarkdownContent(string $content, string $repo, string $path): string
     {
         $processed = "\n\n<!-- Source: {$repo}/{$path} -->\n\n";
-        
+
         $lines = explode("\n", $content);
         $processedLines = [];
         $inCodeBlock = false;
@@ -246,7 +246,7 @@ final class DocumentationSync
     {
         if (preg_match('/^(#{1,6})\s+(.+)$/', $line, $matches)) {
             $level = strlen($matches[1]);
-            
+
             if (str_contains($path, 'README')) {
                 $level = min($level + 1, 6);
             } else {
@@ -265,11 +265,11 @@ final class DocumentationSync
         $replacement = function ($matches) use ($repo) {
             $text = $matches[1];
             $url = $matches[2];
-            
+
             if (str_starts_with($url, '#')) {
                 return "[{$text}]({$url})";
             }
-            
+
             return "[{$text}](https://github.com/{$repo}/blob/main/{$url})";
         };
 
@@ -282,7 +282,7 @@ final class DocumentationSync
         $replacement = function ($matches) use ($repo) {
             $alt = $matches[1];
             $path = $matches[2];
-            
+
             return "![{$alt}](https://raw.githubusercontent.com/{$repo}/main/{$path})";
         };
 
@@ -324,7 +324,7 @@ function main(): void
     try {
         $sync = new DocumentationSync($outputDir, $githubToken, $verbose);
         $sync->sync($sources);
-        
+
         echo "✅ Documentation sync completed successfully!" . PHP_EOL;
     } catch (\Exception $e) {
         echo "❌ Error: " . $e->getMessage() . PHP_EOL;
@@ -343,7 +343,7 @@ Options:
   -o, --output <dir>     Output directory for compiled documentation (default: ../../docs)
   -t, --token <token>    GitHub personal access token (optional, uses GITHUB_TOKEN env if not provided)
   -s, --source <sources> Comma-separated list of sources to sync (default: all)
-                        Available sources: OPENFGA_DOCS, PYTHON_SDK, JAVA_SDK, JS_SDK, 
+                        Available sources: OPENFGA_DOCS, PYTHON_SDK, JAVA_SDK, JS_SDK,
                                          DOTNET_SDK, GO_SDK, PHP_SDK, LARAVEL_SDK
   -v, --verbose         Enable verbose output
   -h, --help           Show this help message

@@ -2,7 +2,7 @@
 
 ## Root Directory
 ```
-/Users/evan/Developer/evansims/openfga-mcp/
+/Users/evan/Developer/franciscoklogan/openfga-mcp/
 ├── bin/
 │   └── openfga-mcp          # Main executable entry point
 ├── src/                     # Source code

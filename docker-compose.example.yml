@@ -1,5 +1,5 @@
 # Example Docker Compose configuration for running OpenFGA MCP Server with OpenFGA
-# 
+#
 # This example shows how to run both OpenFGA and the MCP server together.
 # Copy this file to docker-compose.yml and run: docker-compose up
 
@@ -22,7 +22,7 @@ services:
 
   # OpenFGA MCP Server in online mode (read-only by default)
   mcp-server:
-    image: evansims/openfga-mcp:latest
+    image: franciscoklogan/openfga-mcp:latest
     container_name: openfga-mcp
     depends_on:
       - openfga
@@ -45,7 +45,7 @@ services:
 
   # Example: MCP Server in offline mode (no OpenFGA required)
   # mcp-server-offline:
-  #   image: evansims/openfga-mcp:latest
+  #   image: franciscoklogan/openfga-mcp:latest
   #   container_name: openfga-mcp-offline
   #   # No OPENFGA_MCP_API_URL = offline mode
   #   stdin_open: true

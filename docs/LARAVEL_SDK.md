@@ -1,12 +1,12 @@
 # LARAVEL_SDK Documentation
 
-> Compiled from: https://github.com/evansims/openfga-laravel
+> Compiled from: https://github.com/franciscoklogan/openfga-laravel
 > Generated: 2025-08-03 22:14:06 UTC
 
 ---
 
 
-<!-- Source: evansims/openfga-laravel/README.md -->
+<!-- Source: franciscoklogan/openfga-laravel/README.md -->
 
 <div align="center">
   <p><a href="https://openfga.dev"><img src=".github/openfga.png" width="100" /></a></p>
@@ -37,7 +37,7 @@
 ### Installation
 
 ```bash
-composer require evansims/openfga-laravel
+composer require franciscoklogan/openfga-laravel
 ```
 
 Publish the configuration:
@@ -128,33 +128,33 @@ class DocumentController extends Controller
 
 ### Documentation
 
-- [Installation](https://github.com/evansims/openfga-laravel/blob/main/docs/installation.md)
-- [Quickstart](https://github.com/evansims/openfga-laravel/blob/main/docs/quickstart.md)
-- [Configuration](https://github.com/evansims/openfga-laravel/blob/main/docs/configuration.md)
-- [Eloquent Integration](https://github.com/evansims/openfga-laravel/blob/main/docs/eloquent.md)
-- [Middleware](https://github.com/evansims/openfga-laravel/blob/main/docs/middleware.md)
-- [Performance & Optimization](https://github.com/evansims/openfga-laravel/blob/main/docs/performance.md)
-- [Testing](https://github.com/evansims/openfga-laravel/blob/main/docs/testing.md)
-- [API Reference](https://github.com/evansims/openfga-laravel/blob/main/docs/api-reference.md)
-- **[Cookbook & Recipes](https://github.com/evansims/openfga-laravel/blob/main/docs/cookbook/README.md)** - Real-world implementation patterns
+- [Installation](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/installation.md)
+- [Quickstart](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/quickstart.md)
+- [Configuration](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/configuration.md)
+- [Eloquent Integration](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/eloquent.md)
+- [Middleware](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/middleware.md)
+- [Performance & Optimization](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/performance.md)
+- [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/testing.md)
+- [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/api-reference.md)
+- **[Cookbook & Recipes](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/cookbook/README.md)** - Real-world implementation patterns
 
 <p><br /></p>
 
 ### Related
 
-- [OpenFGA PHP SDK](https://github.com/evansims/openfga-php)
+- [OpenFGA PHP SDK](https://github.com/franciscoklogan/openfga-php)
 
 <p><br /></p>
 
 ### Contributing
 
-Contributions are welcome—have a look at our [contributing guidelines](https://github.com/evansims/openfga-laravel/blob/main/.github/CONTRIBUTING.md).
+Contributions are welcome—have a look at our [contributing guidelines](https://github.com/franciscoklogan/openfga-laravel/blob/main/.github/CONTRIBUTING.md).
 
 
-<!-- End of evansims/openfga-laravel/README.md -->
+<!-- End of franciscoklogan/openfga-laravel/README.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/cache/read-through.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/cache/read-through.md -->
 
 ### Read-Through Cache
 
@@ -497,10 +497,10 @@ If you're seeing outdated permissions:
 4. Consider disabling cache for specific checks
 
 
-<!-- End of evansims/openfga-laravel/docs/cache/read-through.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/cache/read-through.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/cache/write-behind.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/cache/write-behind.md -->
 
 ### Write-Behind Cache
 
@@ -733,7 +733,7 @@ public function report(Throwable $exception)
         // Notify ops team
         // Consider fallback strategy
     }
-    
+
     parent::report($exception);
 }
 ```
@@ -747,11 +747,11 @@ Always test with queue workers running:
 public function test_write_behind_with_queue()
 {
     Queue::fake();
-    
+
     config(['openfga.queue.enabled' => true]);
-    
+
     OpenFga::grant('user:123', 'editor', 'document:456');
-    
+
     Queue::assertPushed(WriteTupleToFgaJob::class, function ($job) {
         return $job->user === 'user:123'
             && $job->relation === 'editor'
@@ -830,15 +830,15 @@ To migrate from synchronous to write-behind:
 
 #### See Also
 
-- [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/../performance.md)
-- [Queue Configuration](https://github.com/evansims/openfga-laravel/blob/main/../configuration.md#queue-configuration)
-- [Cache Configuration](https://github.com/evansims/openfga-laravel/blob/main/../configuration.md#cache-configuration)
-- [Troubleshooting](https://github.com/evansims/openfga-laravel/blob/main/../troubleshooting.md)
+- [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/../performance.md)
+- [Queue Configuration](https://github.com/franciscoklogan/openfga-laravel/blob/main/../configuration.md#queue-configuration)
+- [Cache Configuration](https://github.com/franciscoklogan/openfga-laravel/blob/main/../configuration.md#cache-configuration)
+- [Troubleshooting](https://github.com/franciscoklogan/openfga-laravel/blob/main/../troubleshooting.md)
 
-<!-- End of evansims/openfga-laravel/docs/cache/write-behind.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/cache/write-behind.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/cookbook/README.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/cookbook/README.md -->
 
 ## Cookbook & Recipes
 
@@ -846,7 +846,7 @@ Welcome to the OpenFGA Laravel Cookbook! This section provides practical recipes
 
 ### Available Recipes
 
-#### 📋 [Implementing RBAC (Role-Based Access Control)](https://github.com/evansims/openfga-laravel/blob/main/implementing-rbac.md)
+#### 📋 [Implementing RBAC (Role-Based Access Control)](https://github.com/franciscoklogan/openfga-laravel/blob/main/implementing-rbac.md)
 
 Learn how to implement traditional role-based access control where users are assigned roles and roles have permissions. This recipe covers:
 
@@ -858,7 +858,7 @@ Learn how to implement traditional role-based access control where users are ass
 
 **Use this when:** You need a traditional role-based system with clear role definitions and hierarchies.
 
-#### 🏢 [Handling Organization/Team Permissions](https://github.com/evansims/openfga-laravel/blob/main/organization-team-permissions.md)
+#### 🏢 [Handling Organization/Team Permissions](https://github.com/franciscoklogan/openfga-laravel/blob/main/organization-team-permissions.md)
 
 Implement complex organizational structures with teams, departments, and nested permissions. This recipe demonstrates:
 
@@ -904,19 +904,19 @@ Have a common authorization pattern you'd like to share? We welcome contribution
 
 ### Getting Help
 
-- Check the main [documentation](https://github.com/evansims/openfga-laravel/blob/main/../README.md) for basic concepts
-- Review the [API Reference](https://github.com/evansims/openfga-laravel/blob/main/../api-reference.md) for detailed method documentation
-- See the [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/../troubleshooting.md) for common issues
-- Visit our [GitHub repository](https://github.com/evansims/openfga-laravel) for support
+- Check the main [documentation](https://github.com/franciscoklogan/openfga-laravel/blob/main/../README.md) for basic concepts
+- Review the [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/../api-reference.md) for detailed method documentation
+- See the [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/../troubleshooting.md) for common issues
+- Visit our [GitHub repository](https://github.com/franciscoklogan/openfga-laravel) for support
 
 ---
 
 **Tip**: Start with the RBAC recipe if you're new to OpenFGA Laravel - it covers the fundamental concepts that apply to all other patterns.
 
-<!-- End of evansims/openfga-laravel/docs/cookbook/README.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/cookbook/README.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/cookbook/implementing-rbac.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/cookbook/implementing-rbac.md -->
 
 ### Implementing RBAC (Role-Based Access Control)
 
@@ -962,8 +962,8 @@ OpenFga::writeBatch([
     ['role:marketing-manager', 'assignee', 'user:alice'],
     ['role:marketing-editor', 'assignee', 'user:bob'],
     ['role:marketing-viewer', 'assignee', 'user:charlie'],
-    
-    // Engineering team roles  
+
+    // Engineering team roles
     ['role:engineering-lead', 'assignee', 'user:david'],
     ['role:senior-engineer', 'assignee', 'user:eve'],
     ['role:junior-engineer', 'assignee', 'user:frank'],
@@ -1001,17 +1001,17 @@ class RoleManager
     {
         return OpenFga::grant("user:{$userId}", 'assignee', "role:{$roleId}");
     }
-    
+
     public function removeUserFromRole(string $userId, string $roleId): bool
     {
         return OpenFga::revoke("user:{$userId}", 'assignee', "role:{$roleId}");
     }
-    
+
     public function getUserRoles(string $userId): array
     {
         return OpenFga::listObjects("user:{$userId}", 'assignee', 'role');
     }
-    
+
     public function getRoleUsers(string $roleId): array
     {
         return OpenFga::listUsers("role:{$roleId}", 'assignee');
@@ -1028,12 +1028,12 @@ class PermissionChecker
     {
         return OpenFga::check("user:{$userId}", $permission, "document:{$documentId}");
     }
-    
+
     public function getUserDocuments(string $userId, string $permission): array
     {
         return OpenFga::listObjects("user:{$userId}", $permission, 'document');
     }
-    
+
     public function hasRole(string $userId, string $roleId): bool
     {
         return OpenFga::check("user:{$userId}", 'assignee', "role:{$roleId}");
@@ -1057,22 +1057,22 @@ class User extends Authenticatable
     {
         return OpenFga::grant("user:{$this->id}", 'assignee', "role:{$role}");
     }
-    
+
     public function removeRole(string $role): bool
     {
         return OpenFga::revoke("user:{$this->id}", 'assignee', "role:{$role}");
     }
-    
+
     public function hasRole(string $role): bool
     {
         return OpenFga::check("user:{$this->id}", 'assignee', "role:{$role}");
     }
-    
+
     public function getRoles(): array
     {
         return OpenFga::listObjects("user:{$this->id}", 'assignee', 'role');
     }
-    
+
     public function canAccessDocument(string $documentId, string $permission = 'viewer'): bool
     {
         return OpenFga::check("user:{$this->id}", $permission, "document:{$documentId}");
@@ -1091,29 +1091,29 @@ use OpenFGA\Laravel\Traits\HasAuthorization;
 class Document extends Model
 {
     use HasAuthorization;
-    
+
     protected function authorizationType(): string
     {
         return 'document';
     }
-    
+
     public function grantRolePermission(string $role, string $permission): bool
     {
         return $this->grant("role:{$role}", $permission);
     }
-    
+
     public function revokeRolePermission(string $role, string $permission): bool
     {
         return $this->revoke("role:{$role}", $permission);
     }
-    
+
     public function getUsersWithRole(string $role, string $permission): array
     {
         // First check if the role has the permission
         if (!$this->check("role:{$role}", $permission)) {
             return [];
         }
-        
+
         // Get users assigned to this role
         return OpenFga::listUsers("role:{$role}", 'assignee');
     }
@@ -1158,11 +1158,11 @@ class CheckRole
     public function handle(Request $request, Closure $next, string $role): mixed
     {
         $user = $request->user();
-        
+
         if (!$user || !OpenFga::check("user:{$user->id}", 'assignee', "role:{$role}")) {
             abort(403, "Access denied. Required role: {$role}");
         }
-        
+
         return $next($request);
     }
 }
@@ -1215,22 +1215,22 @@ class ConditionalRoleChecker
     {
         // Basic role check
         $hasPermission = OpenFga::check("user:{$userId}", $permission, $object);
-        
+
         if (!$hasPermission) {
             return false;
         }
-        
+
         // Additional context checks
         if (isset($context['department'])) {
             $userDepartment = $this->getUserDepartment($userId);
             $objectDepartment = $this->getObjectDepartment($object);
-            
+
             // Users can only access documents from their department
             if ($userDepartment !== $objectDepartment) {
                 return false;
             }
         }
-        
+
         if (isset($context['time_restriction'])) {
             // Check business hours
             $now = now();
@@ -1238,7 +1238,7 @@ class ConditionalRoleChecker
                 return false;
             }
         }
-        
+
         return true;
     }
 }
@@ -1253,17 +1253,17 @@ class DynamicRoleManager
     {
         // Grant the role
         OpenFga::grant("user:{$userId}", 'assignee', "role:{$role}");
-        
+
         // Schedule removal
         RevokeTemporaryRoleJob::dispatch($userId, $role)
             ->delay(now()->addMinutes($durationMinutes));
     }
-    
+
     public function assignProjectRole(string $userId, string $projectId, string $role): bool
     {
         // Create project-specific role
         $projectRole = "role:{$role}-project-{$projectId}";
-        
+
         return OpenFga::grant("user:{$userId}", 'assignee', $projectRole);
     }
 }
@@ -1278,55 +1278,55 @@ use Tests\TestCase;
 class RbacTest extends TestCase
 {
     use FakesOpenFga;
-    
+
     public function test_manager_can_edit_documents()
     {
         $this->fakeOpenFga();
-        
+
         $user = User::factory()->create();
         $document = Document::factory()->create();
-        
+
         // Assign role and permissions
         OpenFga::grant("user:{$user->id}", 'assignee', 'role:manager');
         OpenFga::grant('role:manager', 'editor', "document:{$document->id}");
-        
+
         $response = $this->actingAs($user)
             ->put("/documents/{$document->id}", [
                 'title' => 'Updated Title',
             ]);
-            
+
         $response->assertOk();
-        
+
         // Verify role-based permission was checked
         OpenFga::assertChecked("user:{$user->id}", 'editor', "document:{$document->id}");
     }
-    
+
     public function test_role_hierarchy_works()
     {
         $this->fakeOpenFga();
-        
+
         $admin = User::factory()->create();
         $manager = User::factory()->create();
         $viewer = User::factory()->create();
-        
+
         // Set up hierarchy
         OpenFga::grant("user:{$admin->id}", 'assignee', 'role:admin');
         OpenFga::grant("user:{$manager->id}", 'assignee', 'role:manager');
         OpenFga::grant("user:{$viewer->id}", 'assignee', 'role:viewer');
-        
+
         OpenFga::grant('role:admin', 'parent', 'role:manager');
         OpenFga::grant('role:manager', 'parent', 'role:viewer');
-        
+
         // Admin should have all permissions
         $this->assertTrue($admin->hasRole('admin'));
         $this->assertTrue($admin->hasRole('manager')); // Through hierarchy
         $this->assertTrue($admin->hasRole('viewer'));  // Through hierarchy
-        
+
         // Manager should have manager and viewer permissions
         $this->assertFalse($manager->hasRole('admin'));
         $this->assertTrue($manager->hasRole('manager'));
         $this->assertTrue($manager->hasRole('viewer')); // Through hierarchy
-        
+
         // Viewer should only have viewer permissions
         $this->assertFalse($viewer->hasRole('admin'));
         $this->assertFalse($viewer->hasRole('manager'));
@@ -1365,10 +1365,10 @@ class RoleCleanupCommand extends Command
     {
         // Remove expired temporary roles
         $this->cleanupExpiredRoles();
-        
+
         // Remove roles for inactive users
         $this->cleanupInactiveUserRoles();
-        
+
         // Audit role assignments
         $this->auditRoleAssignments();
     }
@@ -1377,10 +1377,10 @@ class RoleCleanupCommand extends Command
 
 This RBAC implementation provides a solid foundation that can be extended based on your specific requirements while maintaining security and performance.
 
-<!-- End of evansims/openfga-laravel/docs/cookbook/implementing-rbac.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/cookbook/implementing-rbac.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/cookbook/organization-team-permissions.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/cookbook/organization-team-permissions.md -->
 
 ### Handling Organization/Team Permissions
 
@@ -2117,10 +2117,10 @@ class OrganizationTeamTest extends TestCase
 This comprehensive approach to organization and team permissions provides a flexible foundation that can be adapted to various organizational structures while maintaining security and performance.
 
 
-<!-- End of evansims/openfga-laravel/docs/cookbook/organization-team-permissions.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/cookbook/organization-team-permissions.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/api-reference.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/api-reference.md -->
 
 ### API Reference
 
@@ -3248,10 +3248,10 @@ if (canAll(['member', 'active'], 'team:123')) {
 ```
 
 
-<!-- End of evansims/openfga-laravel/docs/api-reference.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/api-reference.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/configuration.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/configuration.md -->
 
 ### Configuration Guide
 
@@ -3715,16 +3715,16 @@ Logging Status: ✓ Enabled (openfga channel)
 
 #### Next Steps
 
-- Learn about [Eloquent Integration](https://github.com/evansims/openfga-laravel/blob/main/eloquent.md)
-- Configure [Middleware & Authorization](https://github.com/evansims/openfga-laravel/blob/main/middleware.md)
-- Set up [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md)
-- Optimize with [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/performance.md)
+- Learn about [Eloquent Integration](https://github.com/franciscoklogan/openfga-laravel/blob/main/eloquent.md)
+- Configure [Middleware & Authorization](https://github.com/franciscoklogan/openfga-laravel/blob/main/middleware.md)
+- Set up [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md)
+- Optimize with [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md)
 
 
-<!-- End of evansims/openfga-laravel/docs/configuration.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/configuration.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/eloquent.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/eloquent.md -->
 
 ### Eloquent Integration Guide
 
@@ -4287,16 +4287,16 @@ class Document extends Model
 
 #### Next Steps
 
-- Set up [Middleware & Authorization](https://github.com/evansims/openfga-laravel/blob/main/middleware.md)
-- Learn about [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md) your models
-- Optimize with [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/performance.md)
-- Check the [API Reference](https://github.com/evansims/openfga-laravel/blob/main/api-reference.md)
+- Set up [Middleware & Authorization](https://github.com/franciscoklogan/openfga-laravel/blob/main/middleware.md)
+- Learn about [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md) your models
+- Optimize with [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md)
+- Check the [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/api-reference.md)
 
 
-<!-- End of evansims/openfga-laravel/docs/eloquent.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/eloquent.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/installation.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/installation.md -->
 
 ### Installation Guide
 
@@ -4316,7 +4316,7 @@ This guide will walk you through installing and configuring the OpenFGA Laravel 
 Install the package using Composer:
 
 ```bash
-composer require evansimsopenfga-laravel
+composer require franciscokloganopenfga-laravel
 ```
 
 ##### Step 2: Publish Configuration
@@ -4506,17 +4506,17 @@ For authentication issues:
 
 #### Next Steps
 
-- Read the [Quick Start Tutorial](https://github.com/evansims/openfga-laravel/blob/main/quickstart.md) to learn basic usage
-- Explore [Configuration Options](https://github.com/evansims/openfga-laravel/blob/main/configuration.md) for advanced settings
-- Check out [Eloquent Integration](https://github.com/evansims/openfga-laravel/blob/main/eloquent.md) for model authorization
-- Learn about [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md) with the package
+- Read the [Quick Start Tutorial](https://github.com/franciscoklogan/openfga-laravel/blob/main/quickstart.md) to learn basic usage
+- Explore [Configuration Options](https://github.com/franciscoklogan/openfga-laravel/blob/main/configuration.md) for advanced settings
+- Check out [Eloquent Integration](https://github.com/franciscoklogan/openfga-laravel/blob/main/eloquent.md) for model authorization
+- Learn about [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md) with the package
 
 #### Support
 
 If you encounter any issues:
 
-1. Check the [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/troubleshooting.md)
-2. Search existing [GitHub Issues](https://github.com/evansims/openfga-laravel/issues)
+1. Check the [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/troubleshooting.md)
+2. Search existing [GitHub Issues](https://github.com/franciscoklogan/openfga-laravel/issues)
 3. Create a new issue with detailed information about your problem
 
 #### Version Compatibility
@@ -4527,10 +4527,10 @@ If you encounter any issues:
 | 11.x            | 1.x             | 8.2+        |
 
 
-<!-- End of evansims/openfga-laravel/docs/installation.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/installation.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/middleware.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/middleware.md -->
 
 ### Middleware & Authorization Guide
 
@@ -5177,16 +5177,16 @@ class CachedPermissionMiddleware extends OpenFgaMiddleware
 
 #### Next Steps
 
-- Learn about [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md) authorization
-- Optimize with [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/performance.md)
-- See [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/troubleshooting.md) for common issues
-- Check the [API Reference](https://github.com/evansims/openfga-laravel/blob/main/api-reference.md)
+- Learn about [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md) authorization
+- Optimize with [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md)
+- See [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/troubleshooting.md) for common issues
+- Check the [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/api-reference.md)
 
 
-<!-- End of evansims/openfga-laravel/docs/middleware.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/middleware.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/migration-guide.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/migration-guide.md -->
 
 ### Migration Guide: From Traditional Authorization to OpenFGA Laravel
 
@@ -5279,7 +5279,7 @@ class PostPolicy
 
 1. **Install OpenFGA Laravel**:
 ```bash
-composer require evansims/openfga-laravel
+composer require franciscoklogan/openfga-laravel
 php artisan vendor:publish --provider="OpenFGA\Laravel\OpenFgaServiceProvider"
 ```
 
@@ -5946,9 +5946,9 @@ class RollbackMigration extends Command
 
 #### Support and Resources
 
-- **Documentation**: Refer to the [OpenFGA Laravel documentation](https://github.com/evansims/openfga-laravel/blob/main/docs/README.md)
+- **Documentation**: Refer to the [OpenFGA Laravel documentation](https://github.com/franciscoklogan/openfga-laravel/blob/main/docs/README.md)
 - **Community**: Join discussions in GitHub issues
-- **Examples**: Check the [example application](https://github.com/evansims/openfga-laravel/blob/main/example/README.md)
+- **Examples**: Check the [example application](https://github.com/franciscoklogan/openfga-laravel/blob/main/example/README.md)
 - **Support**: For migration assistance, create a GitHub issue with the `migration` label
 
 #### Next Steps
@@ -5963,10 +5963,10 @@ After completing your migration:
 This migration guide provides a comprehensive approach to moving from traditional Laravel authorization to OpenFGA. Take time to plan your migration strategy and test thoroughly in a staging environment before deploying to production.
 
 
-<!-- End of evansims/openfga-laravel/docs/migration-guide.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/migration-guide.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/multi-tenancy.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/multi-tenancy.md -->
 
 ### Multi-Tenancy Support
 
@@ -5979,7 +5979,7 @@ Define multiple connections in your `config/openfga.php`:
 ```php
 return [
     'default' => env('OPENFGA_CONNECTION', 'main'),
-    
+
     'connections' => [
         'main' => [
             'url' => env('OPENFGA_URL', 'http://localhost:8080'),
@@ -5989,7 +5989,7 @@ return [
                 'method' => env('OPENFGA_AUTH_METHOD', 'none'),
             ],
         ],
-        
+
         'tenant_a' => [
             'url' => env('TENANT_A_OPENFGA_URL'),
             'store_id' => env('TENANT_A_STORE_ID'),
@@ -5999,7 +5999,7 @@ return [
                 'token' => env('TENANT_A_API_TOKEN'),
             ],
         ],
-        
+
         'tenant_b' => [
             'url' => env('TENANT_B_OPENFGA_URL'),
             'store_id' => env('TENANT_B_STORE_ID'),
@@ -6072,19 +6072,19 @@ class SetOpenFgaTenant
     public function handle(Request $request, Closure $next)
     {
         // Resolve tenant from request (e.g., subdomain, header, session)
-        $tenant = $request->route('tenant') 
+        $tenant = $request->route('tenant')
             ?? $request->header('X-Tenant-ID')
             ?? session('tenant_id');
-        
+
         if ($tenant) {
             // Map tenant to connection name
             $connection = $this->mapTenantToConnection($tenant);
             OpenFga::setConnection($connection);
         }
-        
+
         return $next($request);
     }
-    
+
     private function mapTenantToConnection(string $tenant): string
     {
         return match ($tenant) {
@@ -6121,7 +6121,7 @@ use OpenFGA\Laravel\Traits\HasAuthorization;
 class Document extends Model
 {
     use HasAuthorization;
-    
+
     /**
      * Get the OpenFGA connection for this model.
      */
@@ -6256,7 +6256,7 @@ class MultiTenantTest extends OpenFgaTestCase
                 object: 'document:456'
             )
             ->andReturn(true);
-            
+
         $this->mockOpenFga('tenant_b')
             ->shouldCheckPermission(
                 user: 'user:123',
@@ -6264,12 +6264,12 @@ class MultiTenantTest extends OpenFgaTestCase
                 object: 'document:456'
             )
             ->andReturn(false);
-        
+
         // Test isolation
         $this->assertTrue(
             OpenFga::connection('tenant_a')->check('user:123', 'viewer', 'document:456')
         );
-        
+
         $this->assertFalse(
             OpenFga::connection('tenant_b')->check('user:123', 'viewer', 'document:456')
         );
@@ -6293,7 +6293,7 @@ class TenantMigration
             ->export()
             ->forUser($userId)
             ->get();
-        
+
         // Import to target tenant
         OpenFga::connection($to)
             ->import($permissions)
@@ -6334,7 +6334,7 @@ if (config("openfga.connections.{$tenant}")) {
    foreach ($items as $item) {
        OpenFga::connection($item->tenant)->check(...);
    }
-   
+
    // Efficient
    $itemsByTenant = $items->groupBy('tenant');
    foreach ($itemsByTenant as $tenant => $tenantItems) {
@@ -6345,14 +6345,14 @@ if (config("openfga.connections.{$tenant}")) {
 
 #### See Also
 
-- [Configuration](https://github.com/evansims/openfga-laravel/blob/main/configuration.md) - Detailed configuration options
-- [Performance](https://github.com/evansims/openfga-laravel/blob/main/performance.md) - Performance optimization strategies
-- [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md) - Testing multi-tenant applications
+- [Configuration](https://github.com/franciscoklogan/openfga-laravel/blob/main/configuration.md) - Detailed configuration options
+- [Performance](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md) - Performance optimization strategies
+- [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md) - Testing multi-tenant applications
 
-<!-- End of evansims/openfga-laravel/docs/multi-tenancy.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/multi-tenancy.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/performance.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/performance.md -->
 
 ### OpenFGA Laravel - Performance Best Practices
 
@@ -6764,13 +6764,13 @@ Following these best practices will ensure your OpenFGA Laravel implementation s
 4. **Monitor continuously** - Set up alerts for slow queries
 5. **Optimize iteratively** - Start with quick wins, then tackle complex optimizations
 
-For more help, see our [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/TROUBLESHOOTING.md) or visit the [OpenFGA documentation](https://openfga.dev/docs).
+For more help, see our [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/TROUBLESHOOTING.md) or visit the [OpenFGA documentation](https://openfga.dev/docs).
 
 
-<!-- End of evansims/openfga-laravel/docs/performance.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/performance.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/quickstart.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/quickstart.md -->
 
 ### Quickstart Tutorial
 
@@ -6778,7 +6778,7 @@ This tutorial will get you up and running with OpenFGA Laravel in just a few min
 
 #### Prerequisites
 
-Make sure you've completed the [installation guide](https://github.com/evansims/openfga-laravel/blob/main/installation.md) and have:
+Make sure you've completed the [installation guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/installation.md) and have:
 
 - OpenFGA Laravel package installed
 - OpenFGA server running
@@ -6810,38 +6810,38 @@ Understanding how OpenFGA Laravel processes authorization requests helps you bui
 ```mermaid
 flowchart TD
     Start([Application Request]) --> Gate{Laravel Gate?}
-    
+
     Gate -->|Yes| GateProvider[OpenFgaGateProvider]
     Gate -->|No| DirectCall[Direct OpenFga Call]
-    
+
     GateProvider --> Manager[OpenFgaManager]
     DirectCall --> Manager
-    
+
     Manager --> Cache{Cache Enabled?}
     Cache -->|Yes| CacheCheck{Cache Hit?}
     Cache -->|No| ClientCall[OpenFGA Client]
-    
+
     CacheCheck -->|Hit| CacheReturn[Return Cached Result]
     CacheCheck -->|Miss| ClientCall
-    
+
     ClientCall --> Connection[Connection Pool]
     Connection --> APICall[OpenFGA API Request]
-    
+
     APICall --> Response[API Response]
     Response --> StoreCache{Should Cache?}
-    
+
     StoreCache -->|Yes| CacheStore[Store in Cache]
     StoreCache -->|No| ReturnResult[Return Result]
-    
+
     CacheStore --> ReturnResult
     CacheReturn --> ReturnResult
-    
+
     ReturnResult --> WriteBehind{Write-Behind Cache?}
     WriteBehind -->|Yes| QueueJob[Queue Write Job]
     WriteBehind -->|No| End([Result])
-    
+
     QueueJob --> End
-    
+
     style Manager fill:#e1f5fe
     style Cache fill:#f3e5f5
     style ClientCall fill:#e8f5e8
@@ -7206,23 +7206,23 @@ class Document extends Model
 
 #### Next Steps
 
-- Learn about [Configuration Options](https://github.com/evansims/openfga-laravel/blob/main/configuration.md)
-- Explore [Eloquent Integration](https://github.com/evansims/openfga-laravel/blob/main/eloquent.md) in depth
-- Understand [Middleware & Authorization](https://github.com/evansims/openfga-laravel/blob/main/middleware.md)
-- Set up [Testing](https://github.com/evansims/openfga-laravel/blob/main/testing.md) for your application
-- Optimize with our [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/performance.md)
+- Learn about [Configuration Options](https://github.com/franciscoklogan/openfga-laravel/blob/main/configuration.md)
+- Explore [Eloquent Integration](https://github.com/franciscoklogan/openfga-laravel/blob/main/eloquent.md) in depth
+- Understand [Middleware & Authorization](https://github.com/franciscoklogan/openfga-laravel/blob/main/middleware.md)
+- Set up [Testing](https://github.com/franciscoklogan/openfga-laravel/blob/main/testing.md) for your application
+- Optimize with our [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md)
 
 #### Getting Help
 
-- Check the [API Reference](https://github.com/evansims/openfga-laravel/blob/main/api-reference.md)
-- See the [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/troubleshooting.md)
-- Visit our [GitHub repository](https://github.com/evansims/openfga-laravel)
+- Check the [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/api-reference.md)
+- See the [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/troubleshooting.md)
+- Visit our [GitHub repository](https://github.com/franciscoklogan/openfga-laravel)
 
 
-<!-- End of evansims/openfga-laravel/docs/quickstart.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/quickstart.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/spatie-compatibility.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/spatie-compatibility.md -->
 
 ### Spatie Laravel Permission Compatibility
 
@@ -7764,15 +7764,15 @@ Log::info('Permission check duration', ['duration' => $duration]);
 
 #### Support
 
-- **Issues**: Report compatibility issues on [GitHub](https://github.com/evansims/openfga-laravel/issues)
+- **Issues**: Report compatibility issues on [GitHub](https://github.com/franciscoklogan/openfga-laravel/issues)
 - **Migration Help**: Use the `migration` label for migration-related questions
-- **Documentation**: Check the main [OpenFGA Laravel documentation](https://github.com/evansims/openfga-laravel/blob/main/../README.md)
+- **Documentation**: Check the main [OpenFGA Laravel documentation](https://github.com/franciscoklogan/openfga-laravel/blob/main/../README.md)
 
 
-<!-- End of evansims/openfga-laravel/docs/spatie-compatibility.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/spatie-compatibility.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/testing.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/testing.md -->
 
 ### Testing with OpenFGA Laravel
 
@@ -8929,10 +8929,10 @@ class PermissionFixtures
 
 #### Next Steps
 
-- Optimize with [Performance Guide](https://github.com/evansims/openfga-laravel/blob/main/performance.md)
-- See [Troubleshooting Guide](https://github.com/evansims/openfga-laravel/blob/main/troubleshooting.md)
-- Check the [API Reference](https://github.com/evansims/openfga-laravel/blob/main/api-reference.md)
-- Review [Example Application](https://github.com/evansims/openfga-laravel)
+- Optimize with [Performance Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/performance.md)
+- See [Troubleshooting Guide](https://github.com/franciscoklogan/openfga-laravel/blob/main/troubleshooting.md)
+- Check the [API Reference](https://github.com/franciscoklogan/openfga-laravel/blob/main/api-reference.md)
+- Review [Example Application](https://github.com/franciscoklogan/openfga-laravel)
 
 #### Additional Resources
 
@@ -8944,10 +8944,10 @@ class PermissionFixtures
 For more advanced testing scenarios and examples, see the `tests/` directory in this package for comprehensive test suites covering all features.
 
 
-<!-- End of evansims/openfga-laravel/docs/testing.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/testing.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/troubleshooting.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/troubleshooting.md -->
 
 ### Troubleshooting Guide
 
@@ -9583,10 +9583,10 @@ For enterprise support, contact the OpenFGA team through official channels.
    ```
 
 
-<!-- End of evansims/openfga-laravel/docs/troubleshooting.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/troubleshooting.md -->
 
 
-<!-- Source: evansims/openfga-laravel/docs/webhooks.md -->
+<!-- Source: franciscoklogan/openfga-laravel/docs/webhooks.md -->
 
 ### Webhooks
 
@@ -9691,7 +9691,7 @@ Event::listen(WebhookReceived::class, function (WebhookReceived $event) {
         'type' => $event->type,
         'data' => $event->data,
     ]);
-    
+
     // Custom handling based on webhook type
     match ($event->type) {
         'tuple_write' => $this->handleTupleWrite($event->data),
@@ -9714,7 +9714,7 @@ Configure endpoints in `config/openfga.php`:
     'enabled' => env('OPENFGA_WEBHOOKS_ENABLED', false),
     'timeout' => env('OPENFGA_WEBHOOK_TIMEOUT', 5),
     'retries' => env('OPENFGA_WEBHOOK_RETRIES', 3),
-    
+
     'endpoints' => [
         'audit_log' => [
             'url' => 'https://audit.example.com/webhook',
@@ -9725,7 +9725,7 @@ Configure endpoints in `config/openfga.php`:
             'events' => ['permission.granted', 'permission.revoked'],
             'active' => true,
         ],
-        
+
         'slack' => [
             'url' => env('SLACK_WEBHOOK_URL'),
             'events' => ['*'], // All events
@@ -9850,11 +9850,11 @@ use OpenFGA\Laravel\Events\WebhookReceived;
 public function test_incoming_webhook_invalidates_cache()
 {
     Event::fake();
-    
+
     // Enable webhooks
     config(['openfga.webhooks.enabled' => true]);
     config(['openfga.webhooks.secret' => 'test-secret']);
-    
+
     // Create signed payload
     $payload = [
         'type' => 'tuple_write',
@@ -9864,14 +9864,14 @@ public function test_incoming_webhook_invalidates_cache()
             'object' => 'document:456',
         ],
     ];
-    
+
     $signature = hash_hmac('sha256', json_encode($payload), 'test-secret');
-    
+
     // Send webhook request
     $response = $this->postJson('/openfga/webhook', $payload, [
         'X-OpenFGA-Signature' => $signature,
     ]);
-    
+
     $response->assertOk();
     Event::assertDispatched(WebhookReceived::class);
 }
@@ -9886,7 +9886,7 @@ use OpenFGA\Laravel\Events\PermissionChanged;
 public function test_outgoing_webhook_sent_on_permission_change()
 {
     Http::fake();
-    
+
     // Configure webhook
     config([
         'openfga.webhooks.enabled' => true,
@@ -9898,7 +9898,7 @@ public function test_outgoing_webhook_sent_on_permission_change()
             ],
         ],
     ]);
-    
+
     // Trigger permission change
     Event::dispatch(new PermissionChanged(
         user: 'user:123',
@@ -9906,7 +9906,7 @@ public function test_outgoing_webhook_sent_on_permission_change()
         object: 'document:456',
         action: 'grant'
     ));
-    
+
     // Assert webhook was sent
     Http::assertSent(function ($request) {
         return $request->url() === 'https://example.com/webhook'
@@ -9977,8 +9977,8 @@ Event::listen(WebhookReceived::class, function ($event) {
 
 #### Next Steps
 
-- Review [Caching](https://github.com/evansims/openfga-laravel/blob/main/caching.md) for cache invalidation strategies
-- See [Events](https://github.com/evansims/openfga-laravel/blob/main/events.md) for handling permission changes
-- Check [Security](https://github.com/evansims/openfga-laravel/blob/main/security.md) for additional security considerations
+- Review [Caching](https://github.com/franciscoklogan/openfga-laravel/blob/main/caching.md) for cache invalidation strategies
+- See [Events](https://github.com/franciscoklogan/openfga-laravel/blob/main/events.md) for handling permission changes
+- Check [Security](https://github.com/franciscoklogan/openfga-laravel/blob/main/security.md) for additional security considerations
 
-<!-- End of evansims/openfga-laravel/docs/webhooks.md -->
+<!-- End of franciscoklogan/openfga-laravel/docs/webhooks.md -->

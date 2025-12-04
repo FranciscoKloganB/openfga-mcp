@@ -4,8 +4,8 @@
   <h1>OpenFGA MCP Server</h1>
 
   <p>
-    <a href="https://codecov.io/gh/evansims/openfga-mcp" target="_blank"><img src="https://codecov.io/gh/evansims/openfga-mcp/graph/badge.svg?token=DG6KWF1EG6" alt="codecov" /></a>
-    <a href="https://shepherd.dev/github/evansims/openfga-mcp" target="_blank"><img src="https://shepherd.dev/github/evansims/openfga-mcp/coverage.svg" alt="Psalm Type Coverage" /></a>
+    <a href="https://codecov.io/gh/franciscoklogan/openfga-mcp" target="_blank"><img src="https://codecov.io/gh/franciscoklogan/openfga-mcp/graph/badge.svg?token=DG6KWF1EG6" alt="codecov" /></a>
+    <a href="https://shepherd.dev/github/franciscoklogan/openfga-mcp" target="_blank"><img src="https://shepherd.dev/github/franciscoklogan/openfga-mcp/coverage.svg" alt="Psalm Type Coverage" /></a>
     <a href="https://www.bestpractices.dev/projects/10901"><img src="https://www.bestpractices.dev/projects/10901/badge"></a>
   </p>
 
@@ -38,7 +38,7 @@ Design models and generate code without a server:
         "--rm",
         "-i",
         "--pull=always",
-        "evansims/openfga-mcp:latest"
+        "franciscoklogan/openfga-mcp:latest"
       ]
     }
   }
@@ -61,7 +61,7 @@ Connect to OpenFGA for full management capabilities:
         "--pull=always",
         "-e",
         "OPENFGA_MCP_API_URL=http://host.docker.internal:8080",
-        "evansims/openfga-mcp:latest"
+        "franciscoklogan/openfga-mcp:latest"
       ]
     }
   }
