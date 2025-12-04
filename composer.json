@@ -3,6 +3,12 @@
   "description": "Query and administer OpenFGA and Auth0 FGA using AI agents.",
   "license": "Apache-2.0",
   "type": "library",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/franciscokloganb/openfga-php"
+    }
+  ],
   "keywords": [
     "openfga",
     "authorization",
@@ -34,7 +40,7 @@
   },
   "require": {
     "php": "^8.3",
-    "franciscoklogan/openfga-php": "^1.5",
+    "evansims/openfga-php": "^1.5",
     "guzzlehttp/guzzle": "^7.2",
     "php-mcp/server": "^3.2"
   },
