@@ -7,8 +7,8 @@ tasks:
   push:
     deps: [build]
     cmds:
-      - mkdir -p /tmp/docker
+      - mkdir -p /tmp/docker-hub-personal
       - echo "$DOCKER_HUB_PASSWORD" | docker login -u franciscoklogan --password-stdin
-      - docker --config /tmp/docker push franciscoklogan/openfga-mcp:latest
-      - rm -rf /tmp/docker
+      - docker --config /tmp/docker-hub-personal push franciscoklogan/openfga-mcp:latest
+      - rm -rf /tmp/docker-hub-personal
 
