@@ -6,4 +6,9 @@ tasks:
 
   push:
     deps: [build]
-    cmd: docker push franciscoklogan/openfga-mcp:latest
+    cmds:
+      - mkdir -p /tmp/docker
+      - echo "$DOCKER_HUB_PASSWORD" | docker login -u franciscoklogan --password-stdin
+      - docker --config /tmp/docker push franciscoklogan/openfga-mcp:latest
+      - rm -rf /tmp/docker
+
