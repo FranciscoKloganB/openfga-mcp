@@ -3,3 +3,7 @@ version: "3"
 tasks:
   build:
     cmd: docker build -t franciscoklogan/openfga-mcp:latest .
+
+  push:
+    deps: [build]
+    cmd: docker push franciscoklogan/openfga-mcp:latest
